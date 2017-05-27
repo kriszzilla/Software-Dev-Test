@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome!</h1>
+    <p class="lead">If you are new or first time visitor please click the <b>REGISTER</b> button</p>
+    <p>You cannot access "About" and "Contact" page if you don't have an account.</p>
+    <p><a href="\home\Registration" class="btn btn-primary btn-lg">REGISTER &raquo;</a></p>
+    
+</div>
+
+<div class="row">
+    <div class="col-md-4" id="divLoginContainer">
+        <h2>Login</h2>
+
+        <div class="form-group">
+            <input type="email" class="form-control" id="txtEmailAddress" />
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="txtPassword" />
+        </div>
+
+
+        <button class="btn btn-default" id="btnLogin">Proceed &raquo;</button>
+    </div>
+
+    <div class="col-md-4 form-group" id="divMessageContainer">
+
+    </div>
+
+    <div class="col-md-4" id="divLogoutContainer">
+        
+        <button class="btn btn-default" id="btnLogout">Logout &raquo;</button>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            var emailSession = '@ViewBag.PassSession';
+            $('#divLogoutContainer').css('float', 'right');
+
+            if (emailSession == '1')
+            {
+                $('#divLoginContainer').hide();
+                $('#divLogoutContainer').show();
+            }
+            else
+            {
+                $('#divLoginContainer').show();
+                $('#divLogoutContainer').hide();   
+            }
+        });
+
+        $('#btnLogin').click(function () {
+
+            var getEmail = $('#txtEmailAddress').val();
+            var getPassword = $('#txtPassword').val();
+
+            $.ajax({
+                type: 'POST',
+                url: '/Home/UserLogin',
+                data: JSON.stringify({ email: getEmail, password: getPassword }),
+                contentType: 'application/json; charset=utf-8'//,
+                //dataType: 'json'
+
+            })
+
+                .success(function (result) {
+                    $('#divMessageContainer').html(result);
+                    $('#divLoginContainer').hide();
+                })
+                .error(function (xhr, status) {
+                    alert(status);
+                })
+        });
+    </script> 
+}

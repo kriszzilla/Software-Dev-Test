@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLogin", "WebLogin\WebLogin.csproj", "{BBB03021-22E8-4290-97D2-1A0686208DF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLogin.Tests", "WebLogin.Tests\WebLogin.Tests.csproj", "{F61E5262-B1DE-44D5-BDFC-AD91C3C88DC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBB03021-22E8-4290-97D2-1A0686208DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB03021-22E8-4290-97D2-1A0686208DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB03021-22E8-4290-97D2-1A0686208DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB03021-22E8-4290-97D2-1A0686208DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F61E5262-B1DE-44D5-BDFC-AD91C3C88DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F61E5262-B1DE-44D5-BDFC-AD91C3C88DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F61E5262-B1DE-44D5-BDFC-AD91C3C88DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F61E5262-B1DE-44D5-BDFC-AD91C3C88DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

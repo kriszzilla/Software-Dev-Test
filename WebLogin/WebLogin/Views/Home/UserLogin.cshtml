@@ -1,0 +1,23 @@
+﻿
+<h1>@ViewBag.Message</h1>
+
+<div id="divBackToHome">
+    @Html.ActionLink("Back to Home", "Index")
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            var emailSession = '@ViewBag.PassSession';
+
+            if (emailSession == '1')
+            {
+                $('#divBackToHome').hide();
+            }
+            else
+            {
+                $('#divBackToHome').show();
+            }
+        });
+    </script>
+}
